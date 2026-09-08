@@ -12,29 +12,28 @@ Approach:
 - Create a new list ans of size 2*n, initialized with zeros (placeholder).
 - Loop through each index i from 0 to n-1:
   - Copy nums[i] to ans[i] (first half).
-    - Copy nums[i] to ans[i + n] (second half).
-    - Return the resulting list.
+  - Copy nums[i] to ans[i + n] (second half).
+- Return the resulting list.
 
-    Time complexity: O(n) – we iterate over the list once.
-    Space complexity: O(n) – we create a new list of size 2n (the output list).
+Time complexity: O(n) – we iterate over the list once.
+Space complexity: O(n) – we create a new list of size 2n (the output list).
 """
-
 
 class Solution:
     def getConcatenation(self, nums):
         """
         Constructs a list that is the concatenation of the input list with itself.
 
-                Args:
-                            nums (List[int]): The original integer list.
+        Args:
+            nums (List[int]): The original integer list.
 
-                                    Returns:
-                                                List[int]: A new list of length 2*n containing two copies of nums.
+        Returns:
+            List[int]: A new list of length 2*n containing two copies of nums.
 
-                                                        Note:
-                                                                    The original code had the return statement inside the for loop,
-                                                                                which would cause the function to exit after the first iteration.
-                                                                                            The correct placement is outside the loop, as shown below.
+        Note:
+            The original code had the return statement inside the for loop,
+            which would cause the function to exit after the first iteration.
+            The correct placement is outside the loop, as shown below.
         """
         # Store the length of the input list.
         n = len(nums)
@@ -48,7 +47,7 @@ class Solution:
             # Copy to the first half at index i.
             ans[i] = nums[i]
             # Copy to the second half at index i + n.
-        ans[i + n] = nums[i]
+            ans[i + n] = nums[i]
 
         # Return the concatenated list. This must be outside the loop!
         return ans
